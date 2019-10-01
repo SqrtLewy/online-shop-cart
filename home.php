@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		
 		<?php
-		include 'config.php';
+		include_once 'config.php';
 		$pdo = pdo_connect_mysql();
 		
 		$stmt = $pdo->prepare('SELECT * FROM products ORDER BY id ASC');
