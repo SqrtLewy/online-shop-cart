@@ -4,6 +4,7 @@
 	<head>
 		<title>Online Shop</title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
 		
 		<?php
 		include_once 'config.php';
@@ -21,7 +22,7 @@
 		<div id="container">
 		
 			<div id="header">
-				<h2>Online Shop - Everyday low prices!</h2>
+				<h2><a href="home.php">Online Shop</a> - Everyday low prices!</h2>
 			</div>
 			
 			<div id="article">
