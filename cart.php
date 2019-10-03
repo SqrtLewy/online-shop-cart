@@ -4,6 +4,7 @@
 	<head>
 		<title>Online Shop</title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
 		
 		<?php
 		include_once 'config.php';
@@ -17,9 +18,9 @@
 		<div id="container">
 		
 			<div id="header">
-				<h2>Online Shop - Everyday low prices!</h2>
+				<h2><a href="home.php">Online Shop</a> - Everyday low prices!</h2>
 				
-							<?php
+			<?php
 			if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['product_id']) && is_numeric($_POST['quantity'])) {
 			$product_id = (int)$_POST['product_id'];
 			$quantity = (int)$_POST['quantity'];
@@ -29,15 +30,15 @@
 				if ($product && $quantity > 0) {
 					if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 					if (array_key_exists($product_id, $_SESSION['cart'])) {
-                $_SESSION['cart'][$product_id] += $quantity;
-            } else {
-                $_SESSION['cart'][$product_id] = $quantity;
-            }
-        } else {
-            $_SESSION['cart'] = array($product_id => $quantity);
-        }
-    }
-}
+               		$_SESSION['cart'][$product_id] += $quantity;
+           			 } else {
+               			 $_SESSION['cart'][$product_id] = $quantity;
+            			 }
+       				 } else {
+          			  $_SESSION['cart'] = array($product_id => $quantity);
+      				  }
+  				  }
+				}
 
 	if (isset($_GET['remove']) && is_numeric($_GET['remove']) && isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['remove']])) {
     unset($_SESSION['cart'][$_GET['remove']]);
