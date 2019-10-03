@@ -28,13 +28,13 @@
 			<div id="article">
 			  <?php foreach ($products as $product): ?>
 			  <a href="index.php?page=product&id=<?=$product['id']?>" class="product">
-              <img src="img/<?=$product['img']?>" width="250" height="250" alt="<?=$product['name']?>">
-              <span class="name"><?=$product['name']?></span>
-            <span class="price">
-                &dollar;<?=$product['price']?>
-            </span>
-        </a>
-        <?php endforeach; ?>
+           		  <img src="img/<?=$product['img']?>" width="250" height="250" alt="<?=$product['name']?>">
+             		  <span class="name"><?=$product['name']?></span>
+            			<span class="price">
+              				&dollar;<?=$product['price']?>
+          			</span>
+       			  </a>
+       			 <?php endforeach; ?>
 			
 			</div>
 			
